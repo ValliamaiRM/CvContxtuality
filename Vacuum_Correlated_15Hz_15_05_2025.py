@@ -12,12 +12,12 @@ N=20
 ntraj = 1
 meanw1 =  1.34e6
 meanw2 =  1.47e6
-std_dev = 15#15*2*np.pi #sigma2 = sigma1*w2/w1
-#delta = 2 #x*ratio of frequency 
-num_samples = 20
+std_dev = 15
+
+num_samples = 500
 zero_mean_samples = np.random.normal(loc=0.0, scale=std_dev, size=num_samples)
 w1_values = 2*np.pi*( meanw1 + zero_mean_samples)
-w2_values= 2*np.pi*(meanw2 + zero_mean_samples*(meanw2/meanw1)  )#mean2 +  
+w2_values= 2*np.pi*(meanw2 + zero_mean_samples*(meanw2/meanw1)  )
 R1=[]
 R2=[]
 R3=[]
@@ -942,6 +942,7 @@ with open("Vacuum_Correlated_15Hz_CorrectedF.csv", "a", newline="") as f:
     writer.writerow(C2)
     writer.writerow(C3)
     writer.writerow(chi)
+
 
 
 
